@@ -1,7 +1,13 @@
+var baseName 	  = "DataBase1";
+var storeName 	  = "CardsStore";
+var indexedDB 	  = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+var IDBTransaction  = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+
+
 !function(){
 	console.log("LOADDB");
 	//clearStorage();
-	//fillCards();
+	fillCards();
 	loadCards();
 }();
 var dbcards;
@@ -25,20 +31,19 @@ function loadCards(){
 	dbcards = cards;
 }
 
-var indexedDB 	  = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB,
-IDBTransaction  = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction,
-baseName 	  = "DataBase",
-storeName 	  = "CardsStore";
-
 function logerr(err){
 	console.log(err);
+	console.log("ERROR CREATE DB");
+			
 }
 
 function connectDB(f){
+	console.log("CONNECTED DB " + baseName);
 	var request = indexedDB.open(baseName, 1);
 	request.onerror = logerr;
 	request.onsuccess = function(){
 		f(request.result);
+		
 	}
 	request.onupgradeneeded = 
 		function(e){
