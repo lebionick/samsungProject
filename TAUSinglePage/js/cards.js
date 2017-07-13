@@ -2,22 +2,67 @@ window.onload = function(){
 	setTimeout(function(){
 		loadCardsFromDB();
 		}, 1000);
-}
-var texts = [];
+	loadNames();
+};
+var imagenames = [];
+var imagez = {};
 var width = 360;
+var flag = false;
+
 function cock() {
-	//loadCardsFromDB();
-	createCard("WEIRDO", "CHUDAK");
-	showcontent();
-	console.log("FILES INCLUDE:");
-	console.log(texts);
-	//->load images names into array. Show them in list, with choosing
+	//createCard("WEIRDO", "CHUDAK");
+//	console.log(dbcards);
+//	console.log(imagenames);
+	//createCard(1488, "gergeger", "gegege");
 	//->by button you can apply to canvas, with combination pathknown + name.jpg
 	//rename shit
+	console.log(imagenames);
 }
+var currentCanvas;
+
+function chooseImage(){
+	currentCanvas = this;
+	var fns = $("#filenamesscroll");
+	if(flag === false){
+		for(var i in imagenames){
+			var fn = imagenames[i];
+			fns.append("<li><button onclick = 'applyImageToCard(this.innerHTML)'>"+fn+"</button></li>");
+		}
+		flag = true;
+	}
+
+	if(fns.css("visibility") == "hidden"){
+		fns.css("visibility", "visible"); 
+	}
+	else
+		fns.css("visibility", "hidden"); 
+}
+
+function applyImageToCard(url){
+	var ctx = currentCanvas.getContext("2d");
+	var img = document.createElement("IMG");
+	img.src = "file:///opt/usr/media/Images/"+url;
+	ctx.drawImage(img, 30, 80, 200, 200);
+	
+	var fns = $("#filenamesscroll");
+	fns.css("visibility", "hidden"); 
+	delandset(currentCanvas.id, ("file:///opt/usr/media/Images/"+url));
+}
+var deleted = [];
+function delandset(imgid, url){
+	console.log("ID OF CANVAS YOU CLICKED: "+imgid + url);
+	if(!deleted.contains(imgid)){
+		delData(imgid);
+		deleted.push(imgid);
+	//	console.log("CHANGING CARD TO CARD WITH IMAGE: "+url);
+		setData({ native: currentCanvas.native, translate: currentCanvas.trans, image: url });
+	}
+}
+
 var documentsDir;
 
-function createCard(native, translate, image){
+function createCard(id, native, translate, image){
+
 	 var cards = $("#cardScroller");
 	 var nWidth = 0.7 * width;
 	 var nHeight = 1.41 * nWidth;
@@ -35,56 +80,37 @@ function createCard(native, translate, image){
 
 	 ctx.fillStyle = grd;
 	 ctx.fillRect(0.05 * nWidth +10, 0.05 * nHeight +10, 0.9 * nWidth -10, 0.9 * nHeight -10);
+	 
+//	 if(image){
+//		 var izo = document.createElement("IMG");
+//		 izo.src = image;
+	//	 ctx.drawImage(image, 30, 80, 200, 200);
+//	 }
+
 	 ctx.textAlign="center";
 	 ctx.font = "bold "+(width / 20.0)+"px Verdana";
 	 ctx.fillStyle = "black";
 	 ctx.fillText(native, 0.5 * nWidth, 0.2 * nHeight);
 	 ctx.fillText(translate, 0.5 * nWidth,0.85 * nHeight);
+	 console.log("IMAGE NAME: " + image);
 	 
-	 newCard.te = native;
-	 newCard.onclick = function(){
-		//alert(this.te);
-		var ctx = this.getContext("2d");
-		var img = document.createElement("IMG");
-		img.width = 200;
-		img.height = 300;
-		img.src = "file:///opt/usr/media/Images/20170711_153913.jpg";
-//		findphoto(function(file){
-//			console.log(file);
-//			img.src = file;
-//		});
-		ctx.drawImage(img, 10, 10);
-	   // ctx.drawImage(img, 10, 10);
-//	    var ctx = this.getContext("2d");
-////	    var img = document.createElement("IMG");
-////	    img.src = "images/tizen_32.png";
-////	    img.width = 200;
-////	    img.height = 300;
-//	    ctx.drawImage(img, 10, 10);
-	 };
-//	 newCard.onmousedown = function(){
-//		 timer = setTimeout( doStuff, 500);
-//	 };
-//
-//	 newCard.onmouseup = function(){
-//		 clearTimeout( timer );
-//	 };
-//	 
-//	 function doStuff() {
-//		  alert('choose image from library');
-//	 }
+	 newCard.trans = translate;
+	 newCard.native = native;
+	 newCard.id = id;
 
-	  $("#scrollCards").append(newCard);
+	 newCard.onclick = chooseImage;
+	 $("#scrollCards").append(newCard);
 
 }
+
 
 function loadCardsFromDB(){
 	for(var i in dbcards){
 		console.log("LOADCARDSFROMDB");
-		createCard(dbcards[i].native, dbcards[i].translate, dbcards[i].image);
+		createCard(dbcards[i].id, dbcards[i].native, dbcards[i].translate, dbcards[i].image);
 	}
 }
-function showcontent(){
+function loadNames(){
 
 	 tizen.filesystem.resolve(
 		     'images',
@@ -98,7 +124,7 @@ function showcontent(){
 	 function onsuccess(files) {
 		   for(var i = 0; i < files.length; i++) {
 		     console.log(files[i].name);
-		     texts.push(files[i].name);
+		     imagenames.push(files[i].name);
 		   }
 	  }
 	 function onerror(error) {
@@ -107,15 +133,13 @@ function showcontent(){
 
 }
 
-function loadImage(element, src) {
-	var ctx = element.getContext("2d");
-    var img = document.createElement("IMG");
-    img.src = src;
-    ctx.drawImage(img, 10, 10);
+function imagine(url){
+	var izobra = document.createElement("IMG");
+	izobra.src = url;
+	return izobra;
 }
-function getListOfImages(element) {
-	loadImage();
-}
+
+
 function startEducation(){
 	//open new window
 	//maximize #cardScroller, redraw, but without translated text
@@ -123,35 +147,35 @@ function startEducation(){
 	//back button - turn back, not exit
 	//endEducation() is pending
 }
-
-function findphoto(onFind) {
-    // find all images in content storage with specified prefix
-    var titleFilter = new tizen.AttributeFilter(
-            'title',
-            'STARTSWITH',
-            "20170711_153913"
-        ),
-        typeFilter = new tizen.AttributeFilter('type', 'EXACTLY', 'IMAGE');
-
-    try {
-        tizen.content.find(
-            function findSuccess(files) {
-                if (files.length !== 0) {
-                    // run callback with last image
-                    onFind(files[0].contentURI);
-                } else {
-                    onFind(null);
-                }
-            },
-            null,
-            null,
-            new tizen.CompositeFilter(
-                'INTERSECTION',
-                [titleFilter, typeFilter]
-            ),
-            new tizen.SortMode('modifiedDate', 'DESC')
-        );
-    } catch (e) {
-        console.log('findPhoto error: ', e.message);
-    }
-}
+//
+//function findphoto(onFind) {
+//    // find all images in content storage with specified prefix
+//    var titleFilter = new tizen.AttributeFilter(
+//            'title',
+//            'STARTSWITH',
+//            "20170711_153913"
+//        ),
+//        typeFilter = new tizen.AttributeFilter('type', 'EXACTLY', 'IMAGE');
+//
+//    try {
+//        tizen.content.find(
+//            function findSuccess(files) {
+//                if (files.length !== 0) {
+//                    // run callback with last image
+//                    onFind(files[0].contentURI);
+//                } else {
+//                    onFind(null);
+//                }
+//            },
+//            null,
+//            null,
+//            new tizen.CompositeFilter(
+//                'INTERSECTION',
+//                [titleFilter, typeFilter]
+//            ),
+//            new tizen.SortMode('modifiedDate', 'DESC')
+//        );
+//    } catch (e) {
+//        console.log('findPhoto error: ', e.message);
+//    }
+//}

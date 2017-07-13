@@ -9,12 +9,36 @@ div.scrollmenu li {
     text-decoration: none;
 }
 
-ul {
+div.scrollmenu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-li {
+div.scrollmenu li {
     display: inline;
+}
+footer {
+    position: absolute;
+    left: 10px;
+    top: 400px;
+    z-index: 200;
+}
+
+div.scrolllist {
+    visibility: hidden;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrolllist li {
+    padding: 3px;
+    text-decoration: none;
+}
+
+div.scrolllist ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
 }

@@ -7,9 +7,10 @@ var IDBTransaction  = window.IDBTransaction || window.webkitIDBTransaction || wi
 !function(){
 	console.log("LOADDB");
 	//clearStorage();
-	fillCards();
+	//fillCards();
 	loadCards();
 }();
+
 var dbcards;
 function fillCards(){
 	var pack = [];
@@ -66,7 +67,9 @@ function getStorage(f){
 			console.dir(e);
 				var cursor = e.target.result;
 				if(cursor){
-					rows.push(cursor.value);
+					var item = cursor.value;
+					item.id = cursor.key;
+					rows.push(item);
 					cursor.continue();
 				}
 				else {

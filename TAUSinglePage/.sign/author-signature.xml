@@ -12,7 +12,7 @@
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>bKedK/5YZLjGPkTemQUKS8r3LcCCIz9AGFHjWyO7Ngg=</DigestValue>
+<DigestValue>dIbRni4RqBdFoHqvC2UC4rvhGjIEO8XJ3u27Ga/Sji0=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -828,15 +828,15 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>djGDNH/e2PHTpnM+rzQJIZIHQRA6qQuJOgVivHqVPiQ=</DigestValue>
+<DigestValue>zYTLkq8LDxPyYNdaYBzy5dqqYK+Wu9iQEoAjz/TA3M8=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcards.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>cLUAAQz27Bszh2s5v+yYFZTHcUKcwiQE/++XR7CQYyM=</DigestValue>
+<DigestValue>vXV0Agx+o5CBubs8U6fnzitv9i+qsGSpGqlBR4SETrI=</DigestValue>
 </Reference>
 <Reference URI="js%2Fdatabase.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>auX+LIQcaGOs2HSLi0fRWJvC9V38wEsBEaroYYkZuKQ=</DigestValue>
+<DigestValue>4UTaZbYnwACLb0kaorpofpVn37UjbZNx/gax9/99p3k=</DigestValue>
 </Reference>
 <Reference URI="js%2Fjquery-3.2.1.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1611,11 +1611,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-dWh7mzS0D8YA9Lr9Y+ipLwrA+vIIiQoO8iWX7Y1YmezzpYJZsFyk2+tcYMUJpCXitTKt/P8Xyb2u
-pGwDsFUv1/juPo73xcBxcJX5Sn5qRgl6wbO7kitLEI5+oJREevn8SYTwD63QhbWjHpBsJUaeeDXC
-/PX64Yu1c7vW8lPr9ollR8YODHxlbcucpk1vk7m1u99ahcSk4eqqTlJyPnOGEtbQyzxH99vpDPv/
-ZQSNes/4Ns7RkQ/qKcXYk0yY38e5pJr4zMUIh3ZeLKKNeH1MOLnw44i9MZWqFA4drS98NVKvU+n5
-dPXfPk+aMB/Hliq3nQv2WW3IbboUoUwBmD/KpA==
+iGDP0iw5Tlr4MZ5X1M3IGPEaodciP+5tGFclOJnk7s/UUudF0kfxzXn9dutqC70ziIK45Xp85GNb
+6qfqdLs2r2FVnvaKZL42ZpKro9XAkwBfAvGvzU49NoX6PgrVYci49jHgVpIjOSuozRn+NKQMqR8g
+eOREiM3fS0qVXxSPqdxPd0w3/Xn98xLlBWwCbT6+f6ug3JJTK759Qn/G50tkBgoLT6OJ6mh5z+5P
+zlSB46OOeHwYg8yX8RQp2rOpbFHHyezE/O0616WMWXAvbcobzZsPcMbmcBmbTVbGq32TKGtpAlpY
+KB6zYxUkPSJbookIzdIyORwIhTj/1UKFlaUdZw==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

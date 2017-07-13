@@ -1,6 +1,6 @@
 config.xml__DEL__TH/cbd3bfBfYlNwQDEewzl+DQoDn8ts3fVk6SvGWBsM=
 css/jquery.mobile-1.4.5.css__DEL__zSZC7WyI24nPh7QIhdmplMiOyELgQaoWXrvtEhcSXEs=
-css/style.css__DEL__bKedK/5YZLjGPkTemQUKS8r3LcCCIz9AGFHjWyO7Ngg=
+css/style.css__DEL__dIbRni4RqBdFoHqvC2UC4rvhGjIEO8XJ3u27Ga/Sji0=
 icon.png__DEL__1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=
 images/ajax-loader.gif__DEL__QoO33lK9NpSavZnH+PehMB7PPWf2Blj6jGhU6ty5GVA=
 images/icons-png/action-black.png__DEL__8KRjHNdlBG2SVEvieGHxma8eCI7YVQyID9MajBXN2vM=
@@ -204,8 +204,7 @@ images/icons-svg/user-white.svg__DEL__4xHkT/K945B1fE5+Fh1Z70J8JgV80Kp9Q1Ux8pL+cv
 images/icons-svg/video-black.svg__DEL__Fpsa39EwCVl33NSyaY9OTYZHdn4NjPdd1+hTK/cVvYo=
 images/icons-svg/video-white.svg__DEL__k8VRWRpwr1v029+uc3hPuXebx1UP6IXOTEA5tcrlQEM=
 images/tizen_32.png__DEL__eDr9ZPFlGlapLDnI1BiALwqovNdBvx3Aspc/lWOH3WI=
-index.html__DEL__djGDNH/e2PHTpnM+rzQJIZIHQRA6qQuJOgVivHqVPiQ=
-js/database.js__DEL__auX+LIQcaGOs2HSLi0fRWJvC9V38wEsBEaroYYkZuKQ=
+index.html__DEL__zYTLkq8LDxPyYNdaYBzy5dqqYK+Wu9iQEoAjz/TA3M8=
 js/jquery-3.2.1.min.js__DEL__hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=
 js/jquery.mobile-1.4.5.min.js__DEL__Lsk+CDPOzTapLoAzWW0G/WeQeViS3FMzywpzPZV8SXk=
 js/main.js__DEL__omxVnVkb5A3AnUh08hGEwmc9xSa2zbYl7nGEA6HBgMI=
@@ -397,5 +396,6 @@ lib/tau/mobile/theme/default/tau.support-2.3.template__DEL__y2hyxtTU0P1NWPjdrqHJ
 lib/tau/mobile/theme/default/tau.template__DEL__CXxJ9mkg6Uf6qGPS9Kp6TJE+Dn2W+oSR+/Y9ZckgjH0=
 lib/tau/mobile/theme/default/theme.js__DEL__aNZtpUArjN9hVFK2UODcVp+5c8SU8CuZsqL0ekosf5A=
 lib/tau/mobile/theme/default/theme.min.js__DEL__IpLU+Mb1c63YvBGZWU3+8zcx7kVp3y5gE4iRP2Jt9Y4=
-author-signature.xml__DEL__/FWS6PHliku910PY1kM14V2+OSfZg93p7PJ94bzY/u0=
-js/cards.js__DEL__cLUAAQz27Bszh2s5v+yYFZTHcUKcwiQE/++XR7CQYyM=
+author-signature.xml__DEL__GgbMMWKvLvzdFRRh7aqXrzNPUCF5Fbt7HohPpiyCpo4=
+js/cards.js__DEL__vXV0Agx+o5CBubs8U6fnzitv9i+qsGSpGqlBR4SETrI=
+js/database.js__DEL__4UTaZbYnwACLb0kaorpofpVn37UjbZNx/gax9/99p3k=
